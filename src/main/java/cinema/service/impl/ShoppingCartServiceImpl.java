@@ -7,6 +7,7 @@ import cinema.model.ShoppingCart;
 import cinema.model.Ticket;
 import cinema.model.User;
 import cinema.service.ShoppingCartService;
+import java.util.List;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -44,7 +45,7 @@ public class ShoppingCartServiceImpl implements ShoppingCartService {
 
     @Override
     public void clear(ShoppingCart shoppingCart) {
-        shoppingCart.setTickets(null);
+        shoppingCart.setTickets(List.of());
         shoppingCartDao.update(shoppingCart);
     }
 }

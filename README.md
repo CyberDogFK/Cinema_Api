@@ -15,8 +15,8 @@ The server application, written in Java and Spring,
 is prepared for use in the backend of a cinema web application. 
 It implements the most necessary functions for such an application:
 - logging in new users and saving them in the database
-- management of films, movie theaters, and screening sessions
-- a custom ticket basket, the user has the opportunity to purchase a ticket for a certain movie screening in a certain auditorium
+- management of films, cinemas, and movie sessions
+- a custom ticket cart, the user has the opportunity to purchase a ticket for a certain movie screening in a certain auditorium
 
 All information is received and sent in JSON format, 
 which allows you to use any appearance for this API that the front-end team can implement
@@ -30,7 +30,7 @@ which allows you to use any appearance for this API that the front-end team can 
 
 Only the administration has access to the most sensitive and important endpoints.
 The administrator has the ability to view the list of registered users, 
-can control the available theaters, add movies, and set sessions for them
+can control the available sinemas, add movies, and set sessions for them
 
 ## :link: Architecture
 
@@ -49,7 +49,7 @@ This project uses n-tier architecture
 |-----------------|-------------------------------------------------------------------------------------------|
 | Java 11         | One of the best standard                                                                  |
 | Project Lombok  | Reduces the amount of written code and reduces the possibility of errors                  |
-| Spring          | To ensure better performance, thanks to dependency injection.                             |
+| Spring Core     | To ensure better performance, thanks to IoC container                                     |
 | Spring WEB      | Convenient libraries, for working with HTTP methods                                       |
 | Spring Security | Authentication and authorization control                                                  |
 | Hibernate       | Is used to ensure the edge of working with databases.                                     |
@@ -75,7 +75,7 @@ then in the top menu, select the startup configuration through Tomcat
 
 ## :bust_in_silhouette:	Security
 
-Security is provided by the Spring framework and the logging system on the site.
+Security is provided by the Spring framework and the authentication system on the site.
 All sensitive data is transmitted and stored in the database in encrypted form. 
 Also, n-tier architecture adds security to this application. 
 So the user can not worry about the safety of his purchases.
